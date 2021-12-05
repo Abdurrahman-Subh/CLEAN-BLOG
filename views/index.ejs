@@ -1,0 +1,63 @@
+<%- include('partials/_header') -%>
+<body>
+
+  <%- include('partials/_navigation'); -%>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Clean Blog</h1>
+            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <% for (let i =0; i < posts.length; i++){ %>
+    <div class="row">
+    
+      <div class="col-lg-12 col-md-6 col-sm-12 tm-catalog-item">
+        <div class="post-preview">
+          <a href="/posts/<%= posts[i]._id %>">
+            <h2 class="post-title">
+             <%= posts[i].title %>
+            </h2>
+          </a>
+          <p><%= posts[i].paragraph %> <a href="/posts/<%= posts[i]._id %>"> <span style="color: blue;">Read More...</span> </a></p>
+          <p class="post-meta">Posted by
+            <a href="#"><%= posts[i].author %></a>
+            on <%= posts[i].dateCreated %></p>
+        </div>
+        <hr>
+      </div>
+    </div>
+       <% } %>
+        
+    
+      
+      </div>
+   
+  
+
+  <hr>
+
+  <%- include('partials/_footer'); -%>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
